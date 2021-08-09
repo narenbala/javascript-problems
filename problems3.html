@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problems 3</title>
+    <style>
+        .box{
+    border: 2px solid grey;
+    width: 300px;
+    height: 100px;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+.answer{
+  display: flex;
+}
+h4{
+  margin-top: 15px;
+  margin-right: 10px;
+}
+#test, #test1{
+  font-size: 20px;
+  margin-top: 12px;
+  letter-spacing: 5px;
+}
+p{
+  margin-right: 10px;
+}
+a {
+  text-decoration: none;
+  color: white;
+  background-color: blueviolet;
+  font-size: 25px;
+  padding: 8px 25px;
+  border: 1px solid blueviolet;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  width: 130px;
+}
+h1{
+  margin-left: 700px;
+}
+    </style>
+</head>
+<body>
+    <h1>Problems 3</h1>
+<h3>Question :</h3>
+<div>
+  <p>Write a JavaScript program to get the current date.</p>
+</div>
+  <h3>Answer :</h3>
+<div class="box">
+  <div class="answer">
+<h4>MM-DD-YYYY:</h4>
+<p id="test"></p>
+</div>
+  <div class="answer">
+    <h4>DD-MM-YYYY:</h4>
+    <p id="test1"></p>
+  </div>
+</div>
+     <a href="index.html">Back To Home</a>
+    
+</body>
+<script>
+    var a = new Date();
+var date = a.getDate();
+var month = a.getMonth();
+var year = a.getFullYear();
+
+document.getElementById("test").innerHTML = month + "/" + date + "/" + year;
+
+document.getElementById("test1").innerHTML = date + "/" + month + "/" + year;
+</script>
+</html>

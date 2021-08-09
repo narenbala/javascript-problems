@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problems 12</title>
+    <style>
+        .box{
+    border: 2px solid grey;
+    width: 300px;
+    height: 100px;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+.answer{
+  display: flex;
+  flex-direction: row;
+}
+p{
+  margin-right: 10px;
+}
+.button {
+  text-decoration: none;
+  color: white;
+  background-color: blueviolet;
+  font-size: 25px;
+  padding: 8px 25px;
+  border: 1px solid blueviolet;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  width: 130px;
+}
+h1{
+  margin-left: 700px;
+}
+    </style>
+</head>
+<body>
+   <h1>Problems 12</h1>
+   <h3>Question :</h3>
+<div>
+  <p>Write a JavaScript program to get the website URL (loading page).</p>
+</div>
+  <h3>Answer :</h3>
+<div class="box">
+<button type="button" onclick="getURL();">Get Page URL</button></br></br>
+<a href="" target="blank" id="url"></a>
+</div>
+     <a class="button" href="index.html">Back To Home</a>
+    
+</body>
+<script>
+    function getURL () {
+        document.getElementById("url").href = (window.location.href);
+  document.getElementById("url").innerHTML = (window.location.href);
+}
+</script>
+</html>

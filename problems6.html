@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problems 6</title>
+    <style>
+        .box{
+    border: 2px solid grey;
+    width: 200px;
+    height: 100px;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+p{
+  margin-right: 10px;
+}
+a {
+  text-decoration: none;
+  color: white;
+  background-color: blueviolet;
+  font-size: 25px;
+  padding: 8px 25px;
+  border: 1px solid blueviolet;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  width: 130px;
+}
+h1{
+  margin-left: 700px;
+}
+    </style>
+</head>
+<body>
+  <h1>Problems 6</h1>
+    <h3>Question :</h3>
+<div>
+  <p>Write a JavaScript program to determine whether a given year is a leap year in the Gregorian calendar.</p>
+</div>
+  <h3>Answer :</h3>
+<div class="box"> 
+  Input Year: </br></br><input type="text" id = "year"/> </br></br>
+      
+    <input type="button" id="button" onClick="LeapYear()"
+            value="Check Leap Year"> 
+      
+    <p id="demo"></p>
+</div>
+     <a href="index.html">Back To Home</a>
+    
+</body>
+<script>
+    function LeapYear() { 
+var year= document.getElementById("year").value; 
+              
+document.getElementById("demo").innerHTML = (year % 100 === 0) ? (year % 400 === 0) : (year % 4 === 0); 
+ } 
+</script>
+</html>

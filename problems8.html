@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problems 8</title>
+    <style>
+        .box{
+    border: 2px solid grey;
+    width: 400px;
+    height: 180px;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+p{
+  margin-right: 10px;
+}
+a {
+  text-decoration: none;
+  color: white;
+  background-color: blueviolet;
+  font-size: 25px;
+  padding: 8px 25px;
+  border: 1px solid blueviolet;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  width: 130px;
+}
+h1{
+  margin-left: 700px;
+}
+    </style>
+</head>
+<body>
+  <h1>Problems 8</h1>
+    <h3>Question :</h3>
+<div>
+  <p>Write a JavaScript program where the program takes a random integer between 1 to 10, the user is then prompted to input a guess number. If the user input matches with guess number, the program will display a message "Good Work" otherwise display a message "Not matched".</p>
+</div>
+  <h3>Answer :</h3>
+<div class="box">
+<h2>Write any number between 1 to 10</h2>
+<input id="inputFiled" type=text /></br></br>
+<input type="submit" value="Submit" onclick="check()">
+<p id="random"></p>
+</div>
+
+     <a href="index.html">Back To Home</a>
+    
+</body>
+<script>
+     var x = Math.floor((Math.random() * 10) + 1);
+function check() {
+    var i = document.getElementById('inputFiled').value;
+    if (i == x) {
+      document.getElementById("random").innerHTML = "Nice Guess";
+    }else {
+      document.getElementById("random").innerHTML = "Wrong answer.. Try again";
+    }
+   
+}
+</script>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problems 5</title>
+    <style>
+        .box{
+    border: 2px solid grey;
+    width: 200px;
+    height: 100px;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+p{
+  margin-right: 10px;
+}
+a {
+  text-decoration: none;
+  color: white;
+  background-color: blueviolet;
+  font-size: 25px;
+  padding: 8px 25px;
+  border: 1px solid blueviolet;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  width: 130px;
+}
+h1{
+  margin-left: 700px;
+}
+    </style>
+</head>
+<body>
+  <h1>Problems 5</h1>
+    <h3>Question :</h3>
+<div>
+  <p>Write a JavaScript program to rotate the string 'w3resource' in right direction by periodically removing one letter from the end of the string and attaching it to the front</p>
+</div>
+  <h3>Answer :</h3>
+<div class="box">
+<p id = 'rotate'></p>
+</div>
+     <a href="index.html">Back To Home</a>
+    
+</body>
+<script>
+    var myVar = setInterval(myFunction, 100);
+    
+    var word = 'My Name is M.Bala Naren. ';
+var newArray = word.split('');
+
+function myFunction() {
+var letter = newArray.pop();
+var newWord = newArray.unshift(letter);
+var theWord = newArray.join('');
+document.getElementById('rotate').innerHTML = theWord;
+}
+</script>
+</html>

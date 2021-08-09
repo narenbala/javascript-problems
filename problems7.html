@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problems 7</title>
+    <style>
+        .box{
+    border: 2px solid grey;
+    width: 250px;
+    height: 100px;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+p{
+  margin-right: 10px;
+}
+a {
+  text-decoration: none;
+  color: white;
+  background-color: blueviolet;
+  font-size: 25px;
+  padding: 8px 25px;
+  border: 1px solid blueviolet;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  width: 130px;
+}
+h1{
+  margin-left: 700px;
+}
+    </style>
+</head>
+<body>
+  <h1>Problems 7</h1>
+    <h3>Question :</h3>
+<div>
+  <p>Write a JavaScript program to find 1st January is being a Sunday between 2014 and 2050.</p>
+</div>
+  <h3>Answer :</h3>
+<div class="box">
+<p id="demo"></p>
+</div>
+     <a href="index.html">Back To Home</a>
+    
+</body>
+<script>
+function firstSunday () {
+  for (var year = 2014; year <= 2050; year++) {
+    var d = new Date(year, 0, 1);
+    if (d.getDay() === 0) {
+      document.getElementById("demo").innerHTML = ('The first day of ' + year + ' is a Sunday');
+    }
+  }
+}
+
+firstSunday();
+</script>
+</html>
