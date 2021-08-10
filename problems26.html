@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problems 26</title>
+    <style>
+        .box{
+    border: 2px solid grey;
+    width: 300px;
+    height: 100px;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+.answer{
+  display: flex;
+  flex-direction: row;
+}
+p{
+  margin-right: 10px;
+}
+a {
+  text-decoration: none;
+  color: white;
+  background-color: blueviolet;
+  font-size: 25px;
+  padding: 8px 25px;
+  border: 1px solid blueviolet;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  width: 130px;
+}
+h1{
+  margin-left: 700px;
+}
+    </style>
+</head>
+<body>
+   <h1>Problems 26</h1>
+   <h3>Question :</h3>
+<div>
+  <p>Write a JavaScript program to create a new string from a given string taking the last 3 characters and added at both the front and back. The string length must be 3 or more.</p>
+</div>
+  <h3>Answer :</h3>
+<div class="box">
+   Enter Text : <input type="text" id="value1"><br><br>
+    <button onclick="myfunction ()">Submit</button>
+    <p id="test"></p>
+</div>
+     <a href="index.html">Back To Home</a>
+    
+</body>
+<script>
+   function myfunction () {
+    var name = document.getElementById("value1").value;
+      back = name.substring(name.length-3);
+     document.getElementById("test").innerHTML = (back + name + back)
+}
+</script>
+</html> 

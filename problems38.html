@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problems 38</title>
+    <style>
+        .box{
+    border: 2px solid grey;
+    width: 300px;
+    height: 100px;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+.answer{
+  display: flex;
+  flex-direction: row;
+}
+p{
+  margin-right: 10px;
+}
+a {
+  text-decoration: none;
+  color: white;
+  background-color: blueviolet;
+  font-size: 25px;
+  padding: 8px 25px;
+  border: 1px solid blueviolet;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  width: 130px;
+}
+h1{
+  margin-left: 700px;
+}
+    </style>
+</head>
+<body>
+   <h1>Problems 38</h1>
+   <h3>Question :</h3>
+<div>
+  <p>Write a JavaScript program to check the total marks of a student in various examinations. The student will get A+ grade if the total marks are in the range 89..100 inclusive, if the examination is "Final-exam." the student will get A+ grade and total marks must be greater than or equal to 90. Return true if the student get A+ grade or false otherwise.</p>
+</div>
+  <h3>Answer :</h3>
+<div class="box">
+    <p id="test"></p>
+  <p id="test1"></p>
+  <p id="test2"></p>
+</div>
+     <a href="index.html">Back To Home</a>
+    
+</body>
+<script>
+   function myfunction (totmarks,is_exam) {
+  if (is_exam) {
+    return totmarks >= 90;
+  }
+ return (totmarks >= 89 && totmarks <= 100);
+ }
+
+document.getElementById("test").innerHTML = (myfunction("78", " "));
+document.getElementById("test1").innerHTML = (myfunction("89", "true "));
+document.getElementById("test2").innerHTML = (myfunction("99", "true "));
+</script>
+</html> 
