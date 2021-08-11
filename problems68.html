@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problems 68</title>
+    <style>
+        .box{
+    border: 2px solid grey;
+    width: 300px;
+    height: 150px;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+.answer{
+  display: flex;
+  flex-direction: row;
+}
+p{
+  margin-right: 10px;
+}
+a {
+  text-decoration: none;
+  color: white;
+  background-color: blueviolet;
+  font-size: 25px;
+  padding: 8px 25px;
+  border: 1px solid blueviolet;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  width: 130px;
+}
+h1{
+  margin-left: 700px;
+}
+    </style>
+</head>
+<body>
+   <h1>Problems 68</h1>
+   <h3>Question :</h3>
+   <div>
+     <p>Write a JavaScript program to create a new string using the first and last n characters from a given sting. The string length must be greater or equal to n.</p>
+   </div>
+     <h3>Answer :</h3>
+   <div class="box">
+     Enter name : <input type="text" id="name"><br><br>
+     Enter number : <input type="number" id="value"><br><br>
+       <button onclick="myfunction ()">Submit</button>
+       <p id="test"></p>
+   </div>
+     <a href="index.html">Back To Home</a>
+    
+</body>
+<script>
+   function myfunction () {
+  var name = document.getElementById('name').value
+  var num = Number(document.getElementById('value').value);
+  const letter = name.substring(num, name.length -num)
+  document.getElementById('test').innerHTML = letter
+}
+</script>
+</html> 
