@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problems 72</title>
+    <style>
+        .box{
+    border: 2px solid grey;
+    width: 200px;
+    height: 100px;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+.answer{
+  display: flex;
+  flex-direction: row;
+}
+p{
+  margin-right: 10px;
+}
+a {
+  text-decoration: none;
+  color: white;
+  background-color: blueviolet;
+  font-size: 25px;
+  padding: 8px 25px;
+  border: 1px solid blueviolet;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  width: 130px;
+}
+h1{
+  margin-left: 700px;
+}
+    </style>
+</head>
+<body>
+   <h1>Problems 72</h1>
+   <h3>Question :</h3>
+<div>
+  <p>Write a JavaScript program to check whether the first and last elements are equal of a given array of integers length 3.</p>
+</div>
+  <h3>Answer :</h3>
+<div class="box">
+    <p id="test"></p>
+    <p id="test1"></p>
+    <p id="test2"></p>
+</div>
+     <a href="index.html">Back To Home</a>
+    
+</body>
+<script>
+   function myfunction (nums) {
+    var end = nums.length - 1;
+    if (nums.length >= 1){
+       return nums[0] == nums[end];
+    } else {return false;}
+}
+document.getElementById('test').innerHTML = (myfunction([10, 20, 30])); 
+document.getElementById('test1').innerHTML = (myfunction([10, 20, 30, 10])); 
+document.getElementById('test2').innerHTML = (myfunction([20, 20, 20]));
+</script>
+</html> 
