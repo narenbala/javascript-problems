@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Problems 84</title>
+    <title>Problems 92</title>
     <style>
         .box{
     border: 2px solid grey;
@@ -37,10 +37,10 @@ h1{
     </style>
 </head>
 <body>
-   <h1>Problems 84</h1>
+   <h1>Problems 92</h1>
    <h3>Question :</h3>
 <div>
-  <p>Write a JavaScript to replace each character of a given string by the next one in the English alphabet. </p>
+  <p> Write a JavaScript program to find the maximal difference between any two adjacent elements of a given array of integers.</p>
 </div>
   <h3>Answer :</h3>
 <div class="box">
@@ -51,15 +51,25 @@ h1{
     
 </body>
 <script>
-   function myfunction (str1) {
-  if (str1.substring(0, 2) === 'Py') 
-  {
-    return str1;
-  }
-  return "Py"+str1;
+   function myfunction (arr) {
+	var max = -1;
+    var temp;
+	for (var i = 0; i < arr.length - 1; i++)
+      {
+		temp = Math.abs(arr[i] - arr[i + 1]);
+		max = Math.max(max, temp);
+	  }
+	return max;
 }
 
-document.getElementById("test1").innerHTML = (myfunction("Python"));
-document.getElementById("test2").innerHTML = (myfunction("thon"));
+console.log(max_difference([1, 2, 3, 8, 9]))
+console.log(max_difference([1, 2, 3, 18, 9]))
+console.log(max_difference([13, 2, 3, 8, 9]))
+
+
+document.getElementById("test1").innerHTML = (myfunction([1, 2, 3, 8, 9]));
+document.getElementById("test2").innerHTML = (myfunction([1, 2, 3, 18, 9]));
+document.getElementById("test3").innerHTML = (myfunction([13, 2, 3, 8, 9]));
+
 </script>
 </html>

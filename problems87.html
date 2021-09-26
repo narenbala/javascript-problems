@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problems 87</title>
+    <style>
+        .box{
+    border: 2px solid grey;
+    width: 200px;
+    height: 100px;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+.answer{
+  display: flex;
+  flex-direction: row;
+}
+p{
+  margin-right: 10px;
+}
+a {
+  text-decoration: none;
+  color: white;
+  background-color: blueviolet;
+  font-size: 25px;
+  padding: 8px 25px;
+  border: 1px solid blueviolet;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  width: 130px;
+}
+h1{
+  margin-left: 700px;
+}
+    </style>
+</head>
+<body>
+   <h1>Problems 87</h1>
+   <h3>Question :</h3>
+<div>
+  <p>Write a JavaScript program to check whether two arrays of integers of same length are similar or not. The arrays will be similar if one array can be obtained from another array by swapping at most one pair of elements.</p>
+</div>
+  <h3>Answer :</h3>
+<div class="box">
+  <p id="test1"></p>
+  <p id="test2"></p>
+  <p id="test3"></p>
+
+</div>
+     <a href="index.html">Back To Home</a>
+    
+</body>
+<script>
+  function myfunction (arra1, arra2) {
+
+for(var i = 0; i < arra1.length; i++) {
+  for(var j = i; j < arra1.length; j++) {
+    var result = true,
+      temp = arra1[i];
+    arra1[i] = arra1[j];
+    arra1[j] = temp;
+    for(var k = 0; k < arra1.length; k++) {
+      if(arra1[k] !== arra2[k]) {
+        result = false;
+        break;
+      }
+    }
+    if(result) {
+      return true;
+    }
+    arra1[j] = arra1[i];
+    arra1[i] = temp;
+  }
+}
+return false;
+}
+
+document.getElementById("test1").innerHTML = (myfunction([10,20,30], [10,20,30]));
+document.getElementById("test2").innerHTML = (myfunction([10,20,30], [30,10,20]));
+document.getElementById("test3").innerHTML = (myfunction([10,20,30,40], [10,30,20,40]));
+
+</script>
+</html>

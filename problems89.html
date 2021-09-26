@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Problems 84</title>
+    <title>Problems 89</title>
     <style>
         .box{
     border: 2px solid grey;
@@ -37,29 +37,34 @@ h1{
     </style>
 </head>
 <body>
-   <h1>Problems 84</h1>
+   <h1>Problems 89</h1>
    <h3>Question :</h3>
 <div>
-  <p>Write a JavaScript to replace each character of a given string by the next one in the English alphabet. </p>
+  <p>Write a JavaScript program to check whether it is possible to replace $ in a given expression x $ y = z with one of the four signs +, -, * or / to obtain a correct expression.</p>
 </div>
   <h3>Answer :</h3>
 <div class="box">
   <p id="test1"></p>
   <p id="test2"></p>
+  <p id="test3"></p>
+  <p id="test4"></p>
+  <p id="test5"></p>
+
 </div>
      <a href="index.html">Back To Home</a>
     
 </body>
 <script>
-   function myfunction (str1) {
-  if (str1.substring(0, 2) === 'Py') 
-  {
-    return str1;
-  }
-  return "Py"+str1;
+   function myfunction(x, y, z) {
+  return x + y == z || x * y == z || x / y == z || x - y == z;
 }
 
-document.getElementById("test1").innerHTML = (myfunction("Python"));
-document.getElementById("test2").innerHTML = (myfunction("thon"));
+document.getElementById("test1").innerHTML = (myfunction(10, 25, 35));
+document.getElementById("test2").innerHTML = (myfunction(10, 25, 250));
+document.getElementById("test3").innerHTML = (myfunction(30, 25, 5));
+document.getElementById("test4").innerHTML = (myfunction(100, 25, 4.0));
+document.getElementById("test5").innerHTML = (myfunction(100, 25, 25));
+
+
 </script>
 </html>

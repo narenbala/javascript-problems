@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Problems 84</title>
+    <title>Problems 91</title>
     <style>
         .box{
     border: 2px solid grey;
@@ -37,29 +37,41 @@ h1{
     </style>
 </head>
 <body>
-   <h1>Problems 84</h1>
+   <h1>Problems 91</h1>
    <h3>Question :</h3>
 <div>
-  <p>Write a JavaScript to replace each character of a given string by the next one in the English alphabet. </p>
+  <p>Write a JavaScript program to find the maximum possible sum of some of its k consecutive numbers (numbers that follow each other in order.) of a given array of positive integers.</p>
 </div>
   <h3>Answer :</h3>
 <div class="box">
   <p id="test1"></p>
   <p id="test2"></p>
+  <p id="test3"></p>
+
 </div>
      <a href="index.html">Back To Home</a>
     
 </body>
 <script>
-   function myfunction (str1) {
-  if (str1.substring(0, 2) === 'Py') 
-  {
-    return str1;
+   function myfunction (nums, k) {
+  let result = 0;
+  let temp_sum = 0;
+  for (var i = 0; i < k - 1; i++) {
+    temp_sum += nums[i];
   }
-  return "Py"+str1;
+  for (var i = k - 1; i < nums.length; i++) {
+    temp_sum += nums[i];
+    if (temp_sum > result) {
+      result = temp_sum;
+    }
+    temp_sum -= nums[i - k + 1];
+  }
+  return result;
 }
 
-document.getElementById("test1").innerHTML = (myfunction("Python"));
-document.getElementById("test2").innerHTML = (myfunction("thon"));
+document.getElementById("test1").innerHTML = (myfunction([1, 2, 3, 14, 5], 2));
+document.getElementById("test2").innerHTML = (myfunction([2, 3, 5, 1, 6], 3));
+document.getElementById("test2").innerHTML = (myfunction([9, 3, 5, 1, 7], 2));
+
 </script>
 </html>

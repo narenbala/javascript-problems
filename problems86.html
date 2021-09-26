@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Problems 84</title>
+    <title>Problems 86</title>
     <style>
         .box{
     border: 2px solid grey;
     width: 200px;
-    height: 100px;
+    height: 150px;
     padding: 20px;
     margin-bottom: 50px;
 }
@@ -37,29 +37,38 @@ h1{
     </style>
 </head>
 <body>
-   <h1>Problems 84</h1>
+   <h1>Problems 86</h1>
    <h3>Question :</h3>
 <div>
-  <p>Write a JavaScript to replace each character of a given string by the next one in the English alphabet. </p>
+  <p>Write a JavaScript program to find the types of a given angle.</p>
 </div>
   <h3>Answer :</h3>
 <div class="box">
   <p id="test1"></p>
   <p id="test2"></p>
+  <p id="test3"></p>
+  <p id="test4"></p>
 </div>
      <a href="index.html">Back To Home</a>
     
 </body>
 <script>
-   function myfunction (str1) {
-  if (str1.substring(0, 2) === 'Py') 
-  {
-    return str1;
+   function myfunction (angle) {
+  if(angle < 90) {
+    return "Acute angle.";
   }
-  return "Py"+str1;
+  if(angle === 90) {
+    return "Right angle.";
+  }
+  if(angle < 180) {
+    return "Obtuse angle.";
+  }
+  return "Straight angle.";
 }
 
-document.getElementById("test1").innerHTML = (myfunction("Python"));
-document.getElementById("test2").innerHTML = (myfunction("thon"));
+document.getElementById("test1").innerHTML = (myfunction(47));
+document.getElementById("test2").innerHTML = (myfunction(90));
+document.getElementById("test3").innerHTML = (myfunction(145));
+document.getElementById("test4").innerHTML = (myfunction(180));
 </script>
 </html>
