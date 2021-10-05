@@ -51,15 +51,26 @@ h1{
     
 </body>
 <script>
-   function myfunction (str1) {
-  if (str1.substring(0, 2) === 'Py') 
-  {
-    return str1;
+   function myfunction (arr, k) {
+
+for (var i = 0; i < k; i++) {
+  var max_index = i,
+    tmp = arr[i];
+
+  for (var j = i + 1; j < arr.length; j++) {
+    if (arr[j] > arr[max_index]) {
+      max_index = j;
+    }
   }
-  return "Py"+str1;
+
+  arr[i] = arr[max_index];
+  arr[max_index] = tmp;
 }
 
-document.getElementById("test1").innerHTML = (myfunction("Python"));
-document.getElementById("test2").innerHTML = (myfunction("thon"));
+return arr[k - 1];
+}
+
+document.getElementById("test1").innerHTML = (myfunction([1,2,6,4,5], 3));
+document.getElementById("test2").innerHTML = (myfunction([-10,-25,-47,-36,0], 1));
 </script>
 </html>

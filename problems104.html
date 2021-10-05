@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Problems 92</title>
+    <title>Problems 104</title>
     <style>
         .box{
     border: 2px solid grey;
@@ -37,10 +37,10 @@ h1{
     </style>
 </head>
 <body>
-   <h1>Problems 92</h1>
+   <h1>Problems 104</h1>
    <h3>Question :</h3>
 <div>
-  <p> Write a JavaScript program to find the maximal difference between any two adjacent elements of a given array of integers.</p>
+  <p>Write a JavaScript program to find two elements of the array such that their absolute difference is not greater than a given integer but is as close to the said integer.</p>
 </div>
   <h3>Answer :</h3>
 <div class="box">
@@ -53,20 +53,22 @@ h1{
     
 </body>
 <script>
-   function myfunction (arr) {
-	var max = -1;
-    var temp;
-	for (var i = 0; i < arr.length - 1; i++)
-      {
-		temp = Math.abs(arr[i] - arr[i + 1]);
-		max = Math.max(max, temp);
-	  }
-	return max;
+   function myfunction(ara, n) {
+    var max_val = -1;
+    for (var i = 0; i < ara.length; i++) {
+        for (var j = i + 1; j < ara.length; j++) {
+            var x = Math.abs(ara[i] - ara[j]);
+            if (x <= n) {
+                max_val = Math.max(max_val, x)
+            }
+        }
+    }
+    return max_val
 }
 
-document.getElementById("test1").innerHTML = (myfunction([1, 2, 3, 8, 9]));
-document.getElementById("test2").innerHTML = (myfunction([1, 2, 3, 18, 9]));
-document.getElementById("test3").innerHTML = (myfunction([13, 2, 3, 8, 9]));
+document.getElementById("test1").innerHTML = (myfunction([12, 10, 33, 34], 10));
+document.getElementById("test2").innerHTML = (myfunction([12, 10, 33, 34], 24));
+document.getElementById("test3").innerHTML = (myfunction([12, 10, 33, 44], 40));
 
 </script>
 </html>
