@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problems 109</title>
+    <style>
+        .box{
+    border: 2px solid grey;
+    width: 200px;
+    height: 100px;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+.answer{
+  display: flex;
+  flex-direction: row;
+}
+p{
+  margin-right: 10px;
+}
+a {
+  text-decoration: none;
+  color: white;
+  background-color: blueviolet;
+  font-size: 25px;
+  padding: 8px 25px;
+  border: 1px solid blueviolet;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  width: 130px;
+}
+h1{
+  margin-left: 700px;
+}
+    </style>
+</head>
+<body>
+   <h1>Problems 109</h1>
+   <h3>Question :</h3>
+<div>
+  <p>Write a JavaScript program to sort an array of all prime numbers between 1 and a given integer.</p>
+</div>
+  <h3>Answer :</h3>
+<div class="box">
+  <p id="test1"></p>
+  <p id="test2"></p>
+  <p id="test3"></p>
+
+</div>
+     <a href="index.html">Back To Home</a>
+    
+</body>
+<script>
+   function myfunction (num) {
+
+var prime_num1 = [],
+    prime_num2 = [];
+for (var i = 0; i <= num; i++) {
+  prime_num2.push(true);
+}
+for (var i = 2; i <= num; i++) {
+  if (prime_num2[i]) {
+    prime_num1.push(i);
+    for (var j = 1; i * j <= num; j++) {
+      prime_num2[i * j] = false;
+    }
+  }
+}
+
+return prime_num1;
+}
+
+document.getElementById("test1").innerHTML = (myfunction(5));
+document.getElementById("test2").innerHTML = (myfunction(11));
+document.getElementById("test3").innerHTML = (myfunction(19));
+
+</script>
+</html>

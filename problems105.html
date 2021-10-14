@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problems 105</title>
+    <style>
+        .box{
+    border: 2px solid grey;
+    width: 200px;
+    height: 100px;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+.answer{
+  display: flex;
+  flex-direction: row;
+}
+p{
+  margin-right: 10px;
+}
+a {
+  text-decoration: none;
+  color: white;
+  background-color: blueviolet;
+  font-size: 25px;
+  padding: 8px 25px;
+  border: 1px solid blueviolet;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  width: 130px;
+}
+h1{
+  margin-left: 700px;
+}
+    </style>
+</head>
+<body>
+   <h1>Problems 105</h1>
+   <h3>Question :</h3>
+<div>
+  <p>Write a JavaScript program to find the number of times to replace a given number with the sum of its digits until it convert to a single digit number.</p>
+</div>
+  <h3>Answer :</h3>
+<div class="box">
+  <p id="test1"></p>
+  <p id="test2"></p>
+</div>
+     <a href="index.html">Back To Home</a>
+    
+</body>
+<script>
+   function myfunction(num) {
+
+var digitSum = function(num) {
+
+    var digit_sum = 0;
+    while (num) {
+        digit_sum += num % 10;
+        num = Math.floor(num / 10);
+    }
+
+    return digit_sum;
+};
+
+var result = 0;
+
+while (num >= 10) {
+    result += 1;
+    num = digitSum(num);
+}
+
+return result;
+}
+
+document.getElementById("test1").innerHTML = (myfunction(123));
+document.getElementById("test2").innerHTML = (myfunction(156));
+</script>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problems 132</title>
+    <style>
+        .box{
+    border: 2px solid grey;
+    width: 200px;
+    height: 100px;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+.answer{
+  display: flex;
+  flex-direction: row;
+}
+p{
+  margin-right: 10px;
+}
+a {
+  text-decoration: none;
+  color: white;
+  background-color: blueviolet;
+  font-size: 25px;
+  padding: 8px 25px;
+  border: 1px solid blueviolet;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  width: 130px;
+}
+h1{
+  margin-left: 700px;
+}
+    </style>
+</head>
+<body>
+   <h1>Problems 132</h1>
+   <h3>Question :</h3>
+<div>
+  <p>Write a JavaScript program to find all distinct prime factors of a given integer.</p>
+</div>
+  <h3>Answer :</h3>
+<div class="box">
+  <p id="test1"></p>
+  <p id="test2"></p>
+  <p id="test3"></p>
+  <p id="test4"></p>
+  <p id="test5"></p>
+
+</div>
+     <a href="index.html">Back To Home</a>
+    
+</body>
+<script>
+   function myfunction(num) {
+  function is_prime(num) {
+    for (let i = 2; i <= Math.sqrt(num); i++)
+    {
+      if (num % i === 0) return false;
+    }
+    return true;
+  }
+  const result = [];
+  for (let i = 2; i <= num; i++)
+  {
+    while (is_prime(i) && num % i === 0) 
+    {
+      if (!result.includes(i)) result.push(i);
+      num /= i;
+    }
+  }
+  return result;
+}
+
+document.getElementById("test1").innerHTML = (myfunction(100));
+document.getElementById("test2").innerHTML = (myfunction(101));
+document.getElementById("test3").innerHTML = (myfunction(103));
+document.getElementById("test4").innerHTML = (myfunction(104));
+document.getElementById("test5").innerHTML = (myfunction(105));
+
+</script>
+</html>

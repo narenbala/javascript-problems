@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problems 143</title>
+    <style>
+        .box{
+    border: 2px solid grey;
+    width: 300px;
+    height: 100px;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+.answer{
+  display: flex;
+  flex-direction: row;
+}
+p{
+  margin-right: 10px;
+}
+a {
+  text-decoration: none;
+  color: white;
+  background-color: blueviolet;
+  font-size: 25px;
+  padding: 8px 25px;
+  border: 1px solid blueviolet;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  width: 130px;
+}
+h1{
+  margin-left: 700px;
+}
+    </style>
+</head>
+<body>
+   <h1>Problems 143</h1>
+   <h3>Question :</h3>
+<div>
+  <p>Write a JavaScript program to sort the strings of a given array of strings in the order of increasing lengths.</p>
+</div>
+  <h3>Answer :</h3>
+<div class="box">
+  <p id="test1"></p>
+  <p id="test2"></p>
+</div>
+     <a href="index.html">Back To Home</a>
+    
+</body>
+<script>
+   function myfunction(arra) {
+	for (var i = 0; i < arra.length; i++) {
+		for (var j = i + 1; j < arra.length; j++) {
+			if (arra[i].length > arra[j].length) {
+				var m = arra[i];
+				arra[i] = arra[j];
+				arra[j] = m;
+			}
+		}
+	}
+	return arra;
+}
+var arra = ["xyz","acd","aa","bb","zzz","", "a","b"];
+
+
+document.getElementById("test1").innerHTML = ("Original array: "+ arra+"\n");
+document.getElementById("test2").innerHTML = (myfunction(["xyz","acd","aa","bb","zzz","", "a","b"]));
+</script>
+</html>

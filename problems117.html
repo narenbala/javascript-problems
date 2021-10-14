@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problems 117</title>
+    <style>
+        .box{
+    border: 2px solid grey;
+    width: 200px;
+    height: 100px;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+.answer{
+  display: flex;
+  flex-direction: row;
+}
+p{
+  margin-right: 10px;
+}
+a {
+  text-decoration: none;
+  color: white;
+  background-color: blueviolet;
+  font-size: 25px;
+  padding: 8px 25px;
+  border: 1px solid blueviolet;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  width: 130px;
+}
+h1{
+  margin-left: 700px;
+}
+    </style>
+</head>
+<body>
+   <h1>Problems 117</h1>
+   <h3>Question :</h3>
+<div>
+  <p>Write a JavaScript program to check whether a given matrix is an identity matrix.</p>
+</div>
+  <h3>Answer :</h3>
+<div class="box">
+  <p id="test1"></p>
+  <p id="test2"></p>
+  <p id="test3"></p>
+
+</div>
+     <a href="index.html">Back To Home</a>
+    
+</body>
+<script>
+   function myfunction(matrix_data) {
+for (var i = 0; i < matrix_data.length; i++)
+  {
+    rows = matrix_data.length;
+cols = matrix_data[i].length;
+if(rows != cols)
+  {
+   console.log("Matrix should be a square matrix");
+   return false;
+  }
+  }
+  for (var i = 0; i < matrix_data.length; i++)
+   {
+    for (var j = 0; j < matrix_data.length; j++)
+     {
+      if (matrix_data[i][j] !== 1 && i === j || matrix_data[i][j] && i !== j)
+      {
+        return false;
+      }
+    }
+  }
+  return true;
+}
+
+document.getElementById("test1").innerHTML = (myfunction([[1, 0, 0, 2], [0, 1, 0], [0, 0, 1]]));
+document.getElementById("test2").innerHTML = (myfunction([[1, 0, 0],  [0, 1, 0],  [0, 0, 1]]));
+document.getElementById("test3").innerHTML = (myfunction([[1, 0, 0],  [0, 1, 0],  [0, 0, 1]]));
+
+</script>
+</html>
